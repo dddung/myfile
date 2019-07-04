@@ -494,7 +494,11 @@ $.fn.dynamicTestSearch = function(id){
         } else {
             $('.test.displayed').first().click();
         }
-        $('.search-result').html('* About: ' + $('.test.displayed').length + ' result(s)');
+        if (search_text !== "") {
+            $('.search-result').html('* About: ' + $('.test.displayed').length + ' result(s)');
+        } else {
+            $('.search-result').html('');
+        }
     });
     
     return target;
